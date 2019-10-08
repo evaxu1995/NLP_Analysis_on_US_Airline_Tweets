@@ -48,9 +48,9 @@ For my topics, I found that my best results were when I used features extracted 
     * 'flight cancelled', 'just cancelled', 'rebook help'
 * **Customer Service Issues: **
     * 'customer service', 'worst customer',  'hold hours'
-* **Unknown**
+* **Unknown**<br>
 
-**Reasons for Positive/Neutral Tweets and Top Word Associations: **
+**Reasons for Positive/Neutral Tweets and Top Word Associations:**
 * **Inquiries:** 
     * 'follow dm', 'need follow', 'dm info'
 * **Customer Satisfaction:** 
