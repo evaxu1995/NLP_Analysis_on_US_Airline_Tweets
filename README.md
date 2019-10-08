@@ -41,12 +41,12 @@ My best model for sentiment classification was a Logistic Regressions model. I c
 <br>
 For my topics, I found that my best results were when I used features extracted with TF-IDF with ngrams = 2, though I also considered TF-IDF with ngrams = 1. I was able to extract 4 topics from negative tweets and 3 topics from positive/neutral tweets. <br>
 
-**Reasons for Negative Tweets and Top Word Associations:** 
-* **Flight Delays:** 
+**Reasons for Negative Tweets and Top Word Associations:** <br>
+* **Flight Delays:** <br>
     * 'flight delayed', 'delayed hours', 'connecting flight' 
-* **Flight Cancellations:**
+* **Flight Cancellations:**<br>
     * 'flight cancelled', 'just cancelled', 'rebook help'
-* **Customer Service Issues: **
+* **Customer Service Issues: **<br>
     * 'customer service', 'worst customer',  'hold hours'
 * **Unknown**<br>
 
