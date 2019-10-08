@@ -1,4 +1,4 @@
-# NLP-Analysis-on-US-Airline-Tweets
+# NLP Analysis on US Airline Tweets
 
 I used a natural language processing (NLP) approach to understand the topics underlying customer tweets within a Twitter US Airlines dataset. I used a semi-supervised classification method where I first classified the sentiments of the tweets as positive/neutral or negative using a Logistics Regression model. Then, I overlayed topic modeling/dimensionality reduction techniques to extract unique topics for each sentiment. Finally, I created an application using Twitter’s API and Flask to deploy my model to production.
 
