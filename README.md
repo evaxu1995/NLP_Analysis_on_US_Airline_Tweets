@@ -11,25 +11,49 @@ When it comes to customer service, travelers are increasingly skipping calls to 
 •	February 2015 Major US Airlines Tweets from Kaggle <br>
 
 ## Methods Used
-•	Exploratory Data Analysis (EDA) <br>
-•	Data Visualization with Tableau <br>
-•	Natural Language Processing (NLP) <br>
-•	Topic Modeling <br>
-•	Sentiment Analysis <br>
-•	Feature Engineering <br>
-•	Application with Flask <br>
+* Exploratory Data Analysis (EDA) <br>
+* Data Visualization with Tableau <br>
+* Natural Language Processing (NLP) <br>
+* Topic Modeling <br>
+* Sentiment Analysis <br>
+* Feature Engineering <br>
+* Application with Flask <br>
 
 ## Notable Technologies Used
-•	Python 3, Jupyter Notebook <br>
-•	Nltk, Spacy, Scikit-learn # NLP Text Processing <br>
-•	CountVectorizer, TfidfVectorizer, NMF # Topic Modeling <br>
-•	Logistic Regression # Sentiment Analysis Model <br>
-•	Pandas, Numpy, Matplotlib, Seaborn, Tableau, Flask # Data Processing/Visualization tools <br>
-•	etc. <br>
+* Python 3, Jupyter Notebook <br>
+* Nltk, Spacy, Scikit-learn # NLP Text Processing <br>
+* CountVectorizer, TfidfVectorizer, NMF # Topic Modeling <br>
+* Logistic Regression # Sentiment Analysis Model <br>
+* Pandas, Numpy, Matplotlib, Seaborn, Tableau, Flask # Data Processing/Visualization tools <br>
+* etc. <br>
 
 ## Main Analysis Threads
-•	Tweet Cleaning - Tweet cleaning by removing hastags, retweets, @s, links, special characters, selecting 500,000 customer tweets to analyze <br>
-•	Tweet Tokenization, and Vectorization - Tokenization through lowercasing and removal of numbers, punctuation and stopwords; term frequency-inverse document frequency count vectorization using ScikitLearn's TfidfVectorizer submodule <br>
-•	Sentiment Analysis - Used Logistic Regression model to classify the overall sentiment for each tweet based on features extracted from TF-IDF <br>
-•	Topic Modeling / Dimensionality Reduction - Ran topic modeling for each sentiment using non-negative matrix factorization (NMF); extracted 4 unique topics for negative tweets, and 3 unique topics for positive/neutral tweets <br>
-•	Application – Created a Flask application that outputs the sentiment and topic behind any customer tweet <br>
+* Tweet Cleaning - Tweet cleaning by removing hastags, retweets, @s, links, special characters <br>
+* Tweet Tokenization, and Vectorization - Tokenization through lowercasing and removal of numbers, punctuation and stopwords; term frequency-inverse document frequency count vectorization using ScikitLearn's TfidfVectorizer submodule <br>
+* Sentiment Analysis - Used Logistic Regression model to classify the overall sentiment for each tweet based on features extracted from Count Vectorizer <br>
+* Topic Modeling / Dimensionality Reduction - Ran topic modeling for each sentiment using non-negative matrix factorization (NMF) and TF-IDF with ngrams = 2; extracted 4 unique topics for negative tweets, and 3 unique topics for positive/neutral tweets <br>
+* Application – Created a Flask application that outputs the sentiment and topic behind any customer tweet <br>
+
+## Results and Conclusions
+
+My best model for sentiment classification was a Logistic Regressions model. I considered KNN, Decision Tree, Random Forest, Gaussian NB, and XGBoost as well. However, I selected a Logistic Regressions model fine tuned with GridSearchCV based on both interpretability and the F1 Metric, since both negative and positive/neutral sentiments have telling information for US Airlines. <br>
+For my topics, I found that my best results were when I used features extracted with TF-IDF with ngrams = 2, though I also considered TF-IDF with ngrams = 1. I was able to extract 4 topics from negative tweets and 3 topics from positive/neutral tweets. <br>
+
+Reasons for Negative Tweets and Top Word Associations: <br>
+* Flight Delays: 
+    * 'flight delayed', 'delayed hours', 'connecting flight' 
+* Flight Cancellations: 
+    * 'flight cancelled', 'just cancelled', 'rebook help'
+* Customer Service Issues: 
+    * 'customer service', 'worst customer',  'hold hours'
+* Unknown
+
+Reasons for Positive/Neutral Tweets and Top Word Associations: <br>
+* Inquiries: 
+    * 'follow dm', 'need follow', 'dm info'
+* Customer Satisfaction: 
+    * 'customer service', 'great customer', 'dm sent'
+* Unknown
+
+In conclusion, these results can help US Airlines effectively identify their strengths and weaknesses through customer feedback, and ultimately find ways to improve customer service. 
+
