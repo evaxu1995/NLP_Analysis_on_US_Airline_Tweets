@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<style>
+	.center {
+  margin: 10px;
+  width: 67%;
+  border: 1px solid #1da1f2;
+  padding: 10px;
+	border-radius: 25px;
+	background-color:#FFFFFF;
+}
+	.center1 {
+  margin: 10px;
+  width: 85%;
+  border: 1px solid #1da1f2;
+  padding: 10px;
+	border-radius: 25px;
+	background-color:#FFFFFF;
+}
+</style>
+</head>
+
+
+<body background= "/static/twitter.jpeg">
+
+	<div align="center">
+	<header>
+		<div class="container" >
+			<div class="center">
+			<h2 style="font-family:Helvetica Neue; font-size:180%">Sentiment Analysis and Topic Modeling for Tweets @Airline</h2>
+
+<!-- style='font-family:Helvetica Neue;' -->
+	</div>
+	</header>
+
+	<div class="ml-container">
+		<div class="center">
+		<form style="font-family:Helvetica Neue;" action="{{ url_for('predict')}}" method="POST">
+		<p style="font-family:Helvetica Neue;"><b>Tell Us About Your Experience</b></p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="4" cols="80" style="font-family:Helvetica Neue;font-size:120%">
+{% if prediction == 0%}{{input}}
+{% elif prediction == 1%}{{input}}
+{% endif %}
+		</textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="tweet">
+	</form>
+
+	<div class="results">
+	{% if prediction == 1%}
+	<h2 style="color:#1da1f2;font-family:Helvetica Neue;">Positive or Neutral Tweet regarding {{topic}}</h2>
+	{% elif prediction == 0%}
+	<h2 style="color:red;font-family:Helvetica Neue;">Negative Tweet regarding {{topic}}</h2>
+	{% endif %}
+	</div>
+
+	<div class="ml-container">
+		<div class="center1">
+		<a class="twitter-moment" href="https://twitter.com/i/moments/1164563484807442438?ref_src=twsrc%5Etfw">United Airlines @united</a>
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+
+</body>
+</html>
