@@ -46,7 +46,7 @@ For my topics, I found that my best results were when I used features extracted 
     * 'flight delayed', 'delayed hours', 'connecting flight' 
 * **Flight Cancellations:**<br>
     * 'flight cancelled', 'just cancelled', 'rebook help'
-* **Customer Service Issues: **<br>
+* **Customer Service Issues:**<br>
     * 'customer service', 'worst customer',  'hold hours'
 * **Unknown**<br>
 
